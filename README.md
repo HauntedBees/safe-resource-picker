@@ -28,6 +28,14 @@ func get_scene() -> PackedScene:
 	return load(scene_path)
 ```
 
+or in C#
+
+```CSharp
+[Export (SRP_HINT.RESOURCE_PATH, "PackedScene")] public string ScenePath;
+
+Node node = ResourceLoader.Load<PackedScene>(ScenePath).Instantiate<Node>();
+```
+
 For an Array of Resources, use the same `@export_custom` annotation on an `Array`, `Array[String]`, `Array[StringName]` or `PackedStringArray` variable.
 
 ## ResourceUidLoader
